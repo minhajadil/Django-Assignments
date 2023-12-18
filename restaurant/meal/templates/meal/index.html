@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block cssfile %} <link rel="stylesheet" href="{% static "meal/css/style.css" %}" >  {% endblock cssfile %}
+
+{% block title %} Show Items {% endblock title %}
+
+{% block content %}
+
+<div class ="hello ">
+
+    <div class="row gap-3 justify-content-center  "> 
+    
+        {% for i in categories %}
+        
+        
+        <div class="col-3 ">
+        
+        <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="{{i.strCategoryThumb}}" alt="Card image cap">
+          
+            <div class="card-body ">
+              <h5>Product id : {{i.idCategory}}</h5>
+             <h5 class ="title text-nowrap"> {{i.strCategory}} </h5>
+             <p class="lekha"> {{i.strCategoryDescription | truncatewords:10 }} </p>
+            </div>
+          </div>
+        
+        </div>
+        
+        
+        
+          {% endfor %}
+
+    
+
+
+</div>
+
+
+
+{% endblock content %}
+
+
+
